@@ -1,0 +1,58 @@
+title:
+    "拒绝伪品，鉴真于“芯”"
+
+subtitle:
+    "欢迎访问乐鉴!"
+
+logo:
+    ""
+
+target:
+    结合最前端的近场通讯NFC防伪技术, 数据动态加密技术以及印刷防伪技术, 营造一个以真品为核心的商业生态圈。
+
+subTargets:
+
+    - 
+        title: 
+            保护
+        icon:
+            shoppint-cart
+        detail: 
+            企业的品牌形象和市场发展
+
+    - 
+        title: 
+            保证
+        icon:
+            laptop
+        detail: 
+            诚信商户的应得利益
+    
+    - 
+        title: 
+            保障
+        icon:
+            lock
+        detail: 
+            消费者的合法权益
+
+features:
+
+    - 
+        detail: 
+            防伪芯片植入简易,防伪成本低廉
+    -
+        detail: 
+            手机验证识别,操作明了简单,验证结果无可争议
+    -
+        detail: 
+            防伪标签,防伪应用和后台系统三重加密验证,确保验证结果唯 一
+    -
+        detail: 
+            防伪标签无法复制或重复利用
+    -
+        detail: 
+            后台数据哈希技术加密,无法破解;确保整个防伪系统安全可靠
+    -
+        detail: 
+            企业可直接管理防伪平台,确保数隐蔽安全
