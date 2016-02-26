@@ -47,3 +47,5 @@ dist/
 css/agency.css
 /css/mixins.css
 /css/variables.css
+qiniu-conf.json 
+qrsync.json
