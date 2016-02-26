@@ -1,0 +1,6 @@
+{
+    "accessKey": "<ACCESS_KEY>",
+    "secretKey": "<SCRETE_KEY>",
+    "bucket": "<BUCKET>",
+    "domain": "<DOMAIN>"
+}
