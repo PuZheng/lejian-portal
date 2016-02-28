@@ -5,7 +5,7 @@ subtitle:
     "欢迎访问乐鉴!"
 
 logo:
-    ""
+    "img/logo.png"
 
 target:
     结合最前端的近场通讯NFC防伪技术, 数据动态加密技术以及印刷防伪技术, 营造一个以真品为核心的商业生态圈。
@@ -16,7 +16,7 @@ subTargets:
         title: 
             保护
         icon:
-            shoppint-cart
+            shield
         detail: 
             企业的品牌形象和市场发展
 
@@ -24,7 +24,7 @@ subTargets:
         title: 
             保证
         icon:
-            laptop
+            dollar
         detail: 
             诚信商户的应得利益
     
@@ -56,3 +56,72 @@ features:
     -
         detail: 
             企业可直接管理防伪平台,确保数隐蔽安全
+
+featureImage:
+    holder.js/640x480?text=六大创新优势图片&bg=2a2025
+
+events:
+
+    - 
+        year:
+            1996
+        detail:
+            公司前身CD Creation创建,致力于多媒体融合制作及防拷贝技术开发。
+        image:
+            img/about/1.jpg
+    -
+        year: 
+            2002 
+        detail:
+            分公司PCB Design LTD. 注册成立,致力于无线通讯,传感技术以及射频技术的研发和运用。
+        image:
+            img/about/2.jpg
+    -
+        year: 
+            2012
+        detail:
+            公司改名为360legit,专注于射频技术NFC芯片在生产领域的运用和信息加密
+        image:
+            img/about/3.jpg
+    -
+        year:
+            2014
+        detail:
+            360乐鉴物联有限公司在深圳正式成立,运用以往18年的行业积累,立志打造一个以真品为核心的商业生态圈
+        image:
+            img/about/4.jpg
+
+teamDetail:
+    "360乐鉴物联科技有限公司专注于数据安全,芯片加密,国际物联网科技、RFID传感科技、NFC手机及应用等多种科技的研究与开发。在物联网数据安全,芯片加密和数据云平台方面,具有国际领先技术。为全球用户提供了首个最高科技的,安全有效的产品防伪溯源营销云平台"
+
+clients:
+
+    # -
+    #     logo: 
+    #         img/logos/envato.jpg
+    #     website: 
+
+    # - 
+    #     logo: 
+    #         img/logos/designmodo.jpg
+    #     website: 
+    #         "designmodo"
+
+    # -
+    #     logo:
+    #         img/logos/themeforest.jpg
+    #     website: 
+    #         "themeforest"
+
+    # -
+    #     logo:
+    #         img/logos/creative-market.jpg
+    #     website: 
+    #         "creative-market"
+    #
+
+domain:
+    www.legit.com
+
+weiboSite:
+    weiboSite
