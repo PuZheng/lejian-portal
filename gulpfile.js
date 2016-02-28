@@ -30,6 +30,7 @@ gulp.task('watch', function () {
     gulp.watch(['*.html', '*.yml'], [ 'html' ]);
     gulp.watch('less/*.less', [ 'less' ]);
     gulp.watch('img/**/*', [ 'img' ]);
+    gulp.watch('js/**/*', copyFiles);
 });
 
 gulp.task('clean', function () {
