@@ -125,3 +125,9 @@ domain:
 
 weiboSite:
     weiboSite
+
+weixinAccount:
+    360乐鉴
+
+weixinQRCode:
+    holder.js/320x320?text=微信二维码&bg=2a2025
