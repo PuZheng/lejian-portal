@@ -29,6 +29,7 @@ gulp.task('connect', function () {
 gulp.task('watch', function () {
     gulp.watch(['*.html', '*.yml'], [ 'html' ]);
     gulp.watch('less/*.less', [ 'less' ]);
+    gulp.watch('img/**/*', [ 'img' ]);
 });
 
 gulp.task('clean', function () {
@@ -61,7 +62,7 @@ gulp.task('img', function () {
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
         use: [pngquant()]
-    })).pipe(gulp.dest('dist/img'));
+    })).pipe(gulp.dest('dist/img')).pipe(connect.reload());
 });
 
 var copyFiles = function () {
