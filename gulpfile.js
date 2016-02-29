@@ -18,6 +18,7 @@ var rename = require('gulp-rename');
 var less = require('gulp-less');
 var through = require('through2');
 var fs = require('fs');
+var fileinclue = require('gulp-file-include');
 
 gulp.task('connect', function () {
     connect.server({
@@ -39,12 +40,23 @@ gulp.task('clean', function () {
     gulp.src('qrsync.json', { read: false }).pipe(rimraf());
 });
 
-gulp.task('html', function () {
-    gulp.src('index.html').pipe(data(function (file, cb) {
-        yaml.load(path.basename(file.path).split('.')[0] + '.yml', function (result) {
-            cb(undefined, result);
-        });
-    })).pipe(template()).pipe(gulp.dest('dist')).pipe(connect.reload());
+
+gulp.task('snippets', function (cb) {
+    var args = yaml.load('vars.yml'); 
+    return gulp.src('./_*.html').pipe(changed('./dist')).pipe(data(args)).pipe(template()).pipe(gulp.dest('dist'));
+});
+
+gulp.task('html', [ 'snippets' ], function () {
+    var args = yaml.load('vars.yml'); 
+    gulp.src(['./solutions.html', './index.html']).pipe(data(args)).pipe(template()).pipe(fileinclue({
+        basepath: './dist'
+    })).pipe(gulp.dest('dist')).pipe(connect.reload());
+
+    // gulp.src('./*.html').pipe(data(function (file, cb) {
+    //     yaml.load(path.basename(file.path).split('.')[0] + '.yml', function (result) {
+    //         cb(undefined, result);
+    //     });
+    // })).pipe(template()).pipe(gulp.dest('dist')).pipe(connect.reload());
 });
 
 
@@ -76,7 +88,7 @@ var copyFiles = function () {
 
 gulp.task('buildDev', ['html', 'less', 'img'], copyFiles);
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['buildDev', 'connect', 'watch']);
 
 gulp.task('qrsyncConf', function () {
     gulp.src('./qiniu-conf.json').pipe(newer('./qrsync.json')).pipe(through.obj(function (chunk, enc, cb) {
@@ -99,7 +111,7 @@ gulp.task('refresh', function () {
     fs.readdir('./dist', function (err, paths) {
         var qiniuConf = require('./qiniu-conf.json');
         var paths = paths.filter(function (path_) {
-            return path.extname(path_) === '.html';
+            return path_[0] != '_' && path.extname(path_) === '.html';
         });
         console.log(paths.join(',') + ' will be refreshed');
         var args = ['cdn/refresh', qiniuConf.bucket].concat(paths.map(function (path_) {

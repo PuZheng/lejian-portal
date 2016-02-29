@@ -4,8 +4,7 @@
     
 ```
 $ npm install
-$ gulp buildDev
-$ gulp
+$ gulp # livereload will start automatically
 ```
 then start your development.
 
