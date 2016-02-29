@@ -17,6 +17,7 @@ var newer = require('gulp-newer');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
 var through = require('through2');
+var fs = require('fs');
 
 gulp.task('connect', function () {
     connect.server({
@@ -95,8 +96,17 @@ gulp.task('sync', ['qrsyncConf'], function () {
 });
 
 gulp.task('refresh', function () {
-    var qiniuConf = require('./qiniu-conf.json');
-    spawn('qrsctl', ['cdn/refresh', qiniuConf.bucket, `http://${qiniuConf.domain}/index.html`]);
+    fs.readdir('./dist', function (err, paths) {
+        var qiniuConf = require('./qiniu-conf.json');
+        var paths = paths.filter(function (path_) {
+            return path.extname(path_) === '.html';
+        });
+        console.log(paths.join(',') + ' will be refreshed');
+        var args = ['cdn/refresh', qiniuConf.bucket].concat(paths.map(function (path_) {
+            return `http://${qiniuConf.domain}/index.html`;
+        }));
+        spawn('qrsctl', args);
+    });
 });
 
 gulp.task('ship', ['sync', 'refresh']);
