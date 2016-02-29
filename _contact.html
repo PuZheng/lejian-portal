@@ -1,0 +1,39 @@
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">联系我们</h2>
+        <h3 class="section-subheading text-muted">我们将以最快的速度进行回复</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form name="sentMessage" id="contactForm" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="您的称呼(可不填)" id="name">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="您的电话或者邮箱" id="emailOrPhone" required data-validation-required-message="请输入您的电话或者邮箱邮箱">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control" placeholder="您的留言" id="message" required data-validation-required-message="请输入留言"></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button type="submit" class="btn btn-xl">发送</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

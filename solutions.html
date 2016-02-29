@@ -27,14 +27,18 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
   </head>
 
   <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
       <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -45,28 +49,30 @@
           <a class="navbar-brand page-scroll" href="index.html#page-top">
             <img src="<%= logo %>" alt="">
             <span>
-              乐鉴
+              乐鉴-解决方案
             </span>
           </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="hidden">
               <a href="#page-top"></a>
             </li>
             <li>
-              <a class="page-scroll" href="#services">宗旨</a>
+              <a class="page-scroll" href="#verificationFlows">验证流程</a>
             </li>
             <li>
-              <a class="page-scroll" href="#features">创新优势</a>
+              <a class="page-scroll" href="#nfcCard">防伪技术</a>
             </li>
             <li>
-              <a class="page-scroll" href="#about">发展历程</a>
+              <a class="page-scroll" href="#mobileApp">移动应用</a>
             </li>
             <li>
-              <a class="page-scroll" href="#team">公司简介</a>
+              <a class="page-scroll" href="#cloud">云平台</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#valueAdded">增值功能</a>
             </li>
             <li>
               <a class="page-scroll" href="#contact">联系我们</a>
@@ -79,122 +85,108 @@
     </nav>
 
     <!-- Header -->
-    <header>
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in"><%= subtitle %></div>
-          <div class="intro-heading"><%= title %></div>
-          <a href="#services" class="page-scroll btn btn-xl">了解更多</a>
-        </div>
-      </div>
-    </header>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="verificationFlows" class="bg-light-gray">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">我们的宗旨</h2>
-            <h3 class="section-subheading text-muted"><%= target %></h3>
+          <div class="col-sm-6 text-center">
+            <h2 class="section-heading">无网络验证</h2>
+            <img src="<%= verificationFlows.offlineImage %>" alt="">
           </div>
-        </div>
-        <div class="row text-center">
-          <% subTargets.forEach(function (target) { %>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-<%= target.icon %> fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading"><%= target.title %></h4>
-            <p class="text-muted"><%= target.detail %></p>
+          <div class="row">
+            <div class="col-sm-6 text-center">
+              <h2 class="section-heading">在线验证</h2>
+              <img src="<%= verificationFlows.offlineImage %>" alt="">
+            </div>
           </div>
-          <% }) %>
         </div>
       </div>
     </section>
 
-    <section id="features" class="bg-light-gray">
+    <section id="nfcCard">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">六大创新优势</h2>
+            <h2 class="section-heading">NFC三重防伪标签</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 text-center">
-            <img src="<%= featureImage %>" alt="六大创新优势">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 text-center">
-
-            <h3 class="section-subheading text-muted">
-              <a href="solutions.html" class="btn btn-info btn-lg">
-                <span class="fa-stack">
-                  <i class="fa fa-stack-2x fa-circle"></i>
-                  <i class="fa fa-info fa-stack-1x text-primary"></i>
-                </span>
-                查看解决方案
-              </a>
-            </h3>
+            <img src="<%= nfcCardImage %>" alt="NFC防伪标签">
           </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="mobileApp" class="bg-light-gray"> 
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">发展历程</h2>
-            <h3 class="section-subheading text-muted">乐鉴感谢您的一路相伴!</h3>
+        <div class="row text-center">
+          <div class="col-lg-8 col-lg-offset-2">
+            <h2 class="section-heading">乐鉴移动应用</h2>
+            <h3 class="section-subheading text-muted">两个主流手机系统IOS和安卓应用,覆盖91%智能手机市场应用附带公众密匙,与后台数据库、乐鉴防伪标签,三重加密验证真伪应用在无网络状态依然可以对乐鉴防伪标签进行密匙配对验证</h3>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12">
-            <ul class="timeline">
-              <% events.forEach(function (event, idx) { %>
-              <li <% if (idx % 2 === 1) { %>class="timeline-inverted"<% } %> >
-                <div class="timeline-image">
-                  <img class="img-circle img-responsive" src="<%= event.image %>" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4><%= event.year %></h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted"><%= event.detail %></p>
-                  </div>
-                </div>
-              </li> 
-              <% }) %>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <h4>让我们一起
-                    <br>创造
-                    <br>未来!</h4>
-                </div>
-              </li>
-            </ul>
+          <div class="col-lg-12 text-center">
+            <img src="<%= mobileAppImage %>" alt="乐鉴移动应用">
           </div>
         </div>
       </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <section id="cloud">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">公司简介</h2>
-            <h3 class="section-subheading text-muted"><%= title %></h3>
+          <div class="col-lg-8 text-center col-lg-offset-2">
+            <h2 class="section-heading">乐鉴云平台</h2>
+            <h3 class="section-subheading text-muted">哈希技术首次运用于后台数据加密,确保数据安全芯片私有密匙和应用公众密匙与后台三重验证,确保验证结果真实可靠。后台管理简易明了,可由厂家自行运营维护。后台采用云技术,具备强大的增值功能</h3>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 text-center">
-            <p class="large text-muted"><%= teamDetail %></p>
+          <div class="col-lg-12 text-center">
+            <img src="<%= cloudImage %>" alt="乐鉴云平台">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="valueAdded" class="bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 text-center col-lg-offset-2">
+            <h2 class="section-heading">乐鉴云平台增值功能</h2>
+            <h3 class="section-subheading text-muted">
+360乐鉴物联科技凭借多年互联网以及移动互联网营销经验,打造了强有力的互动型营销平台,以防伪溯源为契机,为企业及下游经销商,代理商通过移动电子商务向用户提供精准的营销平台
+            </h3>
+          </div>
+        </div>
+        <div class="row">
+          <% valueAddedFunctions.slice(0, 3).forEach(function (f) { %>
+          <div class="col-lg-4 text-center">
+            <h4 class="service-heading">
+              <i class="fa fa-thumbs-up fa-2x text-primary"></i>
+              <%= f.title %>
+            </h4>
+            <p class="text-muted"><%= f.detail %></p>
+          </div>
+          <% }) %>
+        </div>
+        <div class="row">
+          <div class="col-lg-2"></div>
+            <% valueAddedFunctions.slice(3, 5).forEach(function (f) { %>
+            <div class="col-lg-4 text-center">
+              <h4 class="service-heading">
+                <i class="fa fa-thumbs-up fa-2x text-primary"></i>
+                <%= f.title %>
+              </h4>
+              <p class="text-muted"><%= f.detail %></p>
+            </div>
+            <% }) %>
+
+          <div class="col-lg-2"></div>
         </div>
       </div>
     </section>
@@ -221,8 +213,6 @@
     @@include('./_footer.html')
 
     <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-
     <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content">
@@ -262,7 +252,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+    <!-- <script src="js/cbpAnimatedHeader.js"></script> -->
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
